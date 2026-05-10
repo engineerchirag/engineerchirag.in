@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remix: Personalized Mentorship by Chirag</title>
+    <meta name="description" content="A beautiful, responsive landing page for Chirag's Personalized Mentorship Program.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .selection-indigo selection::bg-indigo-500 selection::text-white {
+            /* Handled by standard tailwind selection classes if needed */
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-1000px); }
+        }
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl">CG</div>
+                <span class="font-black text-xl tracking-tighter">Engineer Chirag</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#mission" class="hover:text-white transition-colors">Mission</a>
+                <a href="#program" class="hover:text-white transition-colors">Program</a>
+                <a href="#mentor" class="hover:text-white transition-colors">The Mentor</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">Reviews</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQs</a>
+            </div>
+            
+            <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" class="px-5 py-2.5 bg-white text-black rounded-full text-sm font-bold hover:bg-gray-200 transition-colors">
+                Apply Now
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="pt-40 pb-32 px-6 relative overflow-hidden">
+            <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-600/10 blur-[120px] -z-10 rounded-full"></div>
+            
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-8 reveal">
+                    🚀 Admissions Open for 2026
+                </div>
+                
+                <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter leading-tight mb-8 reveal">
+                    Engineering <br />
+                    <span class="text-indigo-500">Excellence</span> & Scaling
+                </h1>
+
+                <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed reveal">
+                    I help developers master front-end architecture, system design, and career 
+                    growth strategies. Learn the "engineering mindset" directly from a 
+                    Engineering Manager at Google.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                    <a href="#program" class="group px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-bold text-lg flex items-center gap-2 transition-all shadow-lg shadow-indigo-500/20">
+                        Join the Masterclass
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="https://topmate.io/engineerchirag" target="_blank" class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-bold text-lg transition-all text-white">
+                        1:1 Personal Advice
+                    </a>
+                </div>
+
+                <div class="mt-24 relative opacity-50 reveal">
+                    <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-10"></div>
+                    <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-10"></div>
+                    <div class="flex gap-16 whitespace-nowrap text-white/10 font-black text-4xl italic uppercase animate-marquee">
+                        <span>Frontend Architecture</span>
+                        <span>System Design</span>
+                        <span>Node.js</span>
+                        <span>Interview Strategy</span>
+                        <span>Career Branding</span>
+                        <span>Scale & Performance</span>
+                        <span>React Mastery</span>
+                        <!-- Repeat for smooth loop -->
+                        <span>Frontend Architecture</span>
+                        <span>System Design</span>
+                        <span>Node.js</span>
+                        <span>Interview Strategy</span>
+                        <span>Career Branding</span>
+                        <span>Scale & Performance</span>
+                        <span>React Mastery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission -->
+        <section id="mission" class="py-24 bg-[#0a0a0a] border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20 reveal">
+                    <span class="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4 block">My Mission</span>
+                    <h2 class="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+                        Why I Mentor.
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group reveal">
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="heart" class="text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Knowledge Sharing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            For a living, Google pays me well. This mentorship is my way of giving back and sharing 10+ years of engineering wisdom.
+                        </p>
+                    </div>
+                    <div class="group reveal">
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="globe" class="text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Indian Context (Hinglish)</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Language shouldn't be a barrier. Learn complex engineering concepts in a style that's easy to grasp and relate to.
+                        </p>
+                    </div>
+                    <div class="group reveal">
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="lightbulb" class="text-yellow-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Engineering Mindset</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            It's not about becoming a coding expert; it's about providing clarity and assisting in your career progression.
+                        </p>
+                    </div>
+                    <div class="group reveal">
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="users" class="text-green-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">Community Driven</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Join a group of 30k+ like-minded developers who are hungry for knowledge and career growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section id="program" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-600">
+                    Personalized Tracks
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Engineered for those who are serious about their career. No bulk-batch teaching. 
+                    Only 1:1 attention and deep structural growth.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 1 Month -->
+                <div class="relative p-8 rounded-3xl border bg-white/5 border-white/10 reveal">
+                    <h3 class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-2">1 Month Mentorship</h3>
+                    <div class="flex items-baseline gap-1 mb-2 text-white">
+                        <span class="text-4xl font-bold">₹40,000</span>
+                    </div>
+                    <p class="text-white font-medium mb-2">Interview Preparation</p>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">Focused on helping you become interview-ready with structured preparation and continuous feedback.</p>
+                    
+                    <ul class="space-y-4 mb-10 text-white">
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Problem-solving approach (Not just DSA)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Resume review & optimization</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Communication & Leadership mindset</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Real interview-style mock sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Actionable improvement plans</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Structured weekly assignments</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" class="w-full py-4 rounded-2xl font-bold bg-white text-black hover:bg-gray-200 text-center block transition-all">
+                        Apply for 1 Month
+                    </a>
+                </div>
+
+                <!-- 3 Months -->
+                <div class="relative p-8 rounded-3xl border bg-indigo-600/5 border-indigo-500/50 shadow-2xl shadow-indigo-500/10 reveal">
+                    <span class="absolute top-0 right-8 -translate-y-1/2 bg-indigo-500 text-white text-[10px] uppercase font-black px-3 py-1 rounded-full tracking-widest leading-none">
+                        Most Selected
+                    </span>
+                    
+                    <h3 class="text-sm font-bold text-indigo-400 uppercase tracking-widest mb-2">3 Months Mentorship</h3>
+                    <div class="flex items-baseline gap-1 mb-2 text-white">
+                        <span class="text-4xl font-bold">₹25,000</span>
+                        <span class="text-gray-500 text-sm">/ month</span>
+                    </div>
+                    <p class="text-white font-medium mb-2">Skill Building + Career Growth</p>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">A deeper mentorship focused on long-term engineering growth, practical AI projects, and scalable architecture.</p>
+                    
+                    <ul class="space-y-4 mb-10 text-white">
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Everything in 1 Month Plan</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Practical AI Skills & Integrations</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">System Design Deep Dives</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Full-Stack Development Mindset</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">End-to-End Product Engineering</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check-circle-2" class="text-indigo-500 flex-shrink-0 mt-0.5 w-[18px] h-[18px]"></i>
+                            <span class="text-gray-300">Additional Mock Interviews</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" class="w-full py-4 rounded-2xl font-bold bg-indigo-500 hover:bg-indigo-400 text-white text-center block transition-all">
+                        Apply for 3 Months
+                    </a>
+                    <p class="text-[10px] text-gray-500 mt-4 text-center">
+                        * ₹50k upfront, remaining ₹25k at start of second month.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrollment -->
+        <section id="enrollment" class="py-24 bg-[#050505]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Enrollment Process</h2>
+                    <p class="text-gray-400">Low seats. High quality. Personalized Selection.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8 relative">
+                    <div class="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-px bg-white/10 -z-10"></div>
+                    
+                    <div class="relative bg-[#0a0a0a] p-8 rounded-3xl border border-white/5 text-center group hover:border-indigo-500/30 transition-colors reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-6 mx-auto text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <i data-lucide="clipboard-list"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Apply</h4>
+                        <p class="text-gray-500 text-sm">Fill out the application form with your details and specific goals.</p>
+                        <div class="absolute top-4 right-4 text-white/10 font-black text-4xl leading-none">1</div>
+                    </div>
+
+                    <div class="relative bg-[#0a0a0a] p-8 rounded-3xl border border-white/5 text-center group hover:border-indigo-500/30 transition-colors reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-6 mx-auto text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <i data-lucide="user-check"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Review</h4>
+                        <p class="text-gray-500 text-sm">Chirag will personally review your resume and application shortlisting.</p>
+                        <div class="absolute top-4 right-4 text-white/10 font-black text-4xl leading-none">2</div>
+                    </div>
+
+                    <div class="relative bg-[#0a0a0a] p-8 rounded-3xl border border-white/5 text-center group hover:border-indigo-500/30 transition-colors reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-6 mx-auto text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <i data-lucide="phone-call"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Discussion</h4>
+                        <p class="text-gray-500 text-sm">Shortlisted candidates are invited for a quick 1:1 discussion call.</p>
+                        <div class="absolute top-4 right-4 text-white/10 font-black text-4xl leading-none">3</div>
+                    </div>
+
+                    <div class="relative bg-[#0a0a0a] p-8 rounded-3xl border border-white/5 text-center group hover:border-indigo-500/30 transition-colors reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-6 mx-auto text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <i data-lucide="gift"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Selection</h4>
+                        <p class="text-gray-500 text-sm">Final selection based on your commitment and seriousness toward growth.</p>
+                        <div class="absolute top-4 right-4 text-white/10 font-black text-4xl leading-none">4</div>
+                    </div>
+                </div>
+
+                <div class="mt-24 p-12 rounded-[3rem] bg-indigo-600/5 border border-indigo-500/20 text-center reveal">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">Program Structure</h3>
+                    <div class="grid md:grid-cols-2 gap-12 text-left">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-indigo-400 font-bold mb-2 uppercase text-xs tracking-widest">Weekend Live Sessions</h4>
+                                <p class="text-gray-300 text-sm">3–4 hours per week focusing on deep dives.</p>
+                                <ul class="mt-3 space-y-2 text-xs text-gray-400">
+                                    <li>• Saturday: Individual Connect Sessions</li>
+                                    <li>• Sunday: Group Mentorship Session</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-indigo-400 font-bold mb-2 uppercase text-xs tracking-widest">Weekday Support</h4>
+                                <p class="text-gray-300 text-sm">Always connected, never stuck.</p>
+                                <ul class="mt-3 space-y-2 text-xs text-gray-400">
+                                    <li>• Direct 1:1 WhatsApp support</li>
+                                    <li>• Assignment discussions & doubt solving</li>
+                                    <li>• Continuous progress tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentor Section -->
+        <section id="mentor" class="bg-[#0a0a0a] py-24">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="aspect-square rounded-[3rem] overflow-hidden bg-indigo-600/20 relative group">
+                        <img 
+                            src="/main-img.png" 
+                            alt="Chirag Goel" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            referrerpolicy="no-referrer"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-10 left-10 right-10">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="w-8 h-auto" referrerpolicy="no-referrer">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Chirag Goel</h4>
+                                    <p class="text-xs text-indigo-400 font-medium">Engineering Manager @ Google</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span class="text-indigo-400 font-bold uppercase tracking-widest text-sm mb-4 block">The Mentor</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Expertise meets <br />Passion for teaching.</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-10 italic">
+                        "Profession === Engineer 💻 | Love === Teaching 😍 | Passion === Mentoring ❤️‍🔥"
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-10">
+                        I talk about Frontend Development, System Design, and Interview Preparation 
+                        to help students build their careers and professionals grow towards Engineering 
+                        mastery. I believe in knowledge sharing — the more you pour out, the more 
+                        life will be able to pour in.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div>
+                            <span class="text-3xl font-bold text-white block mb-1">10+ Years</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Experience</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-bold text-white block mb-1">30k+</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider font-bold">Developers Taught</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-6">
+                        <a href="https://www.youtube.com/engineerchirag" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/engineerchirag/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/engineerchirag" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-24 bg-[#050505]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">What Mentees Say</h2>
+                    <p class="text-gray-400">Real results from engineers at top tech companies.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-colors relative group reveal">
+                        <i data-lucide="quote" class="absolute top-6 right-6 text-indigo-500/20 w-12 h-12"></i>
+                        <div class="flex gap-1 mb-4 text-yellow-500">
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic leading-relaxed text-sm">
+                            "Chirag's approach to System Design and Frontend Architecture is eye-opening. He doesn't just teach code, he teaches how to think like a staff engineer."
+                        </p>
+                        <div>
+                            <h4 class="font-bold text-white">Ankit Sharma</h4>
+                            <p class="text-[10px] text-indigo-400 font-medium uppercase tracking-wider">SDE @ Microsoft</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-colors relative group reveal">
+                        <i data-lucide="quote" class="absolute top-6 right-6 text-indigo-500/20 w-12 h-12"></i>
+                        <div class="flex gap-1 mb-4 text-yellow-500">
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic leading-relaxed text-sm">
+                            "The mock interviews were brutal but exactly what I needed. His feedback on performance optimization helped me clear my L5 interview."
+                        </p>
+                        <div>
+                            <h4 class="font-bold text-white">Priya Patel</h4>
+                            <p class="text-[10px] text-indigo-400 font-medium uppercase tracking-wider">Frontend Engineer @ Amazon</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-colors relative group reveal">
+                        <i data-lucide="quote" class="absolute top-6 right-6 text-indigo-500/20 w-12 h-12"></i>
+                        <div class="flex gap-1 mb-4 text-yellow-500">
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic leading-relaxed text-sm">
+                            "I've been following Chirag for years. His mentorship helped me transition from a feature developer to a system architect. Truly grateful."
+                        </p>
+                        <div>
+                            <h4 class="font-bold text-white">Rahul Verma</h4>
+                            <p class="text-[10px] text-indigo-400 font-medium uppercase tracking-wider">Senior SDE @ Flipkart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section id="benefits" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="code-2" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Advanced Architecture</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Master the complexities of high-scale frontend systems and state management that companies actually use.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="globe" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Hinglish Support</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Learn in a language you're comfortable with. Complex concepts explained in simple, relatable Hinglish - Indian style.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Career Branding</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Optimize your LinkedIn, build your professional profile, and increase your visibility to top-tier recruiters.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="pen-tool" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Execution Ability</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Develop the ability to independently learn any stack, build introductory apps, and architect from scratch.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Growth Mindset</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Build the confidence and mental models required to navigate senior roles and technical leadership.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/30 transition-all group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 flex items-center justify-center mb-8 reveal group-hover:scale-110 transition-transform">
+                        <i data-lucide="rocket" class="text-indigo-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Interview Readiness</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Mock interviews that simulate top-tier tech companies like Google, Microsoft, and Uber.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expectations -->
+        <section id="expectations" class="py-24 bg-red-950/10 border-y border-white/5">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h3 class="text-2xl font-bold mb-6 reveal">Important Expectations</h3>
+                <p class="text-gray-400 mb-8 italic reveal text-sm lg:text-base">
+                    "This mentorship is designed for people who are genuinely serious about improving. 
+                    The goal is to build long-term engineering thinking."
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-xs font-bold uppercase tracking-widest text-indigo-400 reveal">
+                    <span class="px-4 py-2 bg-indigo-500/10 rounded-full border border-indigo-500/20">Daily Effort</span>
+                    <span class="px-4 py-2 bg-indigo-500/10 rounded-full border border-indigo-500/20">Timely Assignments</span>
+                    <span class="px-4 py-2 bg-indigo-500/10 rounded-full border border-indigo-500/20">Active Participation</span>
+                    <span class="px-4 py-2 bg-indigo-500/10 rounded-full border border-indigo-500/20">Accountability</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="bg-[#0a0a0a] py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12 text-center reveal">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="group reveal border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-indigo-500/20">
+                        <button class="w-full p-6 text-left flex justify-between items-center bg-white/[0.02]" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            <span class="font-bold text-white">Why is the price relatively affordable for this quality?</span>
+                            <i data-lucide="chevron-down" class="text-gray-500 w-5 h-5"></i>
+                        </button>
+                        <div class="p-6 text-gray-400 text-sm bg-white/5 border-t border-white/5 hidden">
+                            For living, Google pays me well. I believe in knowledge sharing and want to provide quality content at the lowest possible price without compromising on depth.
+                        </div>
+                    </div>
+
+                    <div class="group reveal border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-indigo-500/20">
+                        <button class="w-full p-6 text-left flex justify-between items-center bg-white/[0.02]" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            <span class="font-bold text-white">What is the 'Negative Habit' clause?</span>
+                            <i data-lucide="chevron-down" class="text-gray-500 w-5 h-5"></i>
+                        </button>
+                        <div class="p-6 text-gray-400 text-sm bg-white/5 border-t border-white/5 hidden">
+                            I believe in working towards a meaningful purpose. My rule is simple: to afford the growth you seek, try to forego at least one negative habit in your life. It builds the discipline needed for engineering mastery.
+                        </div>
+                    </div>
+
+                    <div class="group reveal border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-indigo-500/20">
+                        <button class="w-full p-6 text-left flex justify-between items-center bg-white/[0.02]" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            <span class="font-bold text-white">Is this a Job-guarantee program?</span>
+                            <i data-lucide="chevron-down" class="text-gray-500 w-5 h-5"></i>
+                        </button>
+                        <div class="p-6 text-gray-400 text-sm bg-white/5 border-t border-white/5 hidden">
+                            No, this is NOT a job-guarantee program. This mentorship helps you grow faster and stand out, but the hunger to secure the job must be yours.
+                        </div>
+                    </div>
+
+                    <div class="group reveal border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-indigo-500/20">
+                        <button class="w-full p-6 text-left flex justify-between items-center bg-white/[0.02]" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            <span class="font-bold text-white">Do I need any prerequisites?</span>
+                            <i data-lucide="chevron-down" class="text-gray-500 w-5 h-5"></i>
+                        </button>
+                        <div class="p-6 text-gray-400 text-sm bg-white/5 border-t border-white/5 hidden">
+                            A laptop, internet, and a deep hunger for knowledge. Whether you are a fresher or a senior, the tracks are personalized to your current level.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/10 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-center md:text-left">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-6 justify-center md:justify-start">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl text-white">CG</div>
+                    <span class="font-bold text-xl tracking-tight text-white">Engineer Chirag</span>
+                </div>
+                <p class="text-gray-400 max-w-sm mx-auto md:mx-0 text-sm leading-relaxed">
+                    Dedicated to empowering next-gen software engineers through high-quality, practical mentorship and career strategies.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-6 text-white text-sm uppercase tracking-widest">Connect</h4>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="https://www.youtube.com/engineerchirag" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-indigo-600 hover:text-white transition-all text-gray-400">
+                        <i data-lucide="youtube" class="w-[18px] h-[18px]"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/engineerchirag/" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-indigo-600 hover:text-white transition-all text-gray-400">
+                        <i data-lucide="linkedin" class="w-[18px] h-[18px]"></i>
+                    </a>
+                    <a href="https://twitter.com/engineerchirag" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-indigo-600 hover:text-white transition-all text-gray-400">
+                        <i data-lucide="twitter" class="w-[18px] h-[18px]"></i>
+                    </a>
+                    <a href="https://github.com/engineerchirag" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-indigo-600 hover:text-white transition-all text-gray-400">
+                        <i data-lucide="github" class="w-[18px] h-[18px]"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-6 text-white text-sm uppercase tracking-widest">Legal</h4>
+                <ul class="text-gray-400 text-sm space-y-3">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms of Use</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Refund Policy</a></li>
+                    <li><a href="mailto:connectlearnwithchirag@gmail.com" class="hover:text-white transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
+            <p>© 2026 Engineer Chirag. All rights reserved.</p>
+            <p>Built with ❤️ by AI Studio for Chirag Goel</p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-[#050505]/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-[#050505]/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+            }
+        });
+    </script>
+</body>
+</html>
