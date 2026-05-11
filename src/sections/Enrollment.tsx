@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ClipboardList, UserCheck, PhoneCall, Gift, Calendar, MessageCircle, Video, Users, FileQuestion, TrendingUp } from 'lucide-react';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
-import { ScrambleText } from '@/components/ui/ScrambleText';
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -45,13 +44,21 @@ const steps = [
 ];
 
 export const Enrollment = () => {
+  const structureTitle = "Program Structure".split("");
+
   return (
     <section className="py-32 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
-            <ScrambleText text="Enrollment Process" />
-          </h2>
+          <motion.h2 
+            initial={{ opacity: 0, filter: "blur(10px)", scale: 0.9 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl md:text-5xl font-display font-bold mb-6 text-white inline-block"
+          >
+            Enrollment Process
+          </motion.h2>
           <p className="text-gray-300 font-normal text-lg">Low seats. High quality. Personalized Selection.</p>
         </div>
 
@@ -87,8 +94,19 @@ export const Enrollment = () => {
         {/* Enhanced Program Structure Box */}
         <div className="mt-40">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">
-              <ScrambleText text="Program Structure" />
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-bold mb-4 text-white flex justify-center flex-wrap">
+              {structureTitle.map((char, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ rotateX: -90, opacity: 0, y: 10 }}
+                  whileInView={{ rotateX: 0, opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03, duration: 0.4, ease: "easeOut" }}
+                  style={{ display: "inline-block", whiteSpace: "pre" }}
+                >
+                  {char}
+                </motion.span>
+              ))}
             </h3>
             <p className="text-gray-300 text-lg">A perfect balance of deep-work weekends and continuous weekday momentum.</p>
           </div>
@@ -157,4 +175,3 @@ export const Enrollment = () => {
     </section>
   );
 };
-

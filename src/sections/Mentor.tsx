@@ -69,13 +69,13 @@ export const Mentor = () => {
               life will be able to pour in.
             </p>
             
-            <div className="grid grid-cols-2 gap-8 mb-12">
-              <div className="glass-card p-6 rounded-2xl">
-                <span className="text-4xl font-display font-bold text-white block mb-2">10+ Yrs</span>
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-12">
+              <div className="glass-card p-4 sm:p-6 rounded-2xl">
+                <span className="text-3xl sm:text-4xl font-display font-bold text-white block mb-2">10+ Yrs</span>
                 <span className="text-xs text-gray-300 uppercase tracking-widest font-bold">Experience</span>
               </div>
-              <div className="glass-card p-6 rounded-2xl">
-                <span className="text-4xl font-display font-bold text-white block mb-2">100k+</span>
+              <div className="glass-card p-4 sm:p-6 rounded-2xl">
+                <span className="text-3xl sm:text-4xl font-display font-bold text-white block mb-2">100k+</span>
                 <span className="text-xs text-gray-300 uppercase tracking-widest font-bold">Developers Taught</span>
               </div>
             </div>
@@ -92,7 +92,7 @@ export const Mentor = () => {
                   key={i} 
                   href={social.href} 
                   target="_blank" 
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 hover:text-white text-gray-300 transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
@@ -106,4 +106,3 @@ export const Mentor = () => {
     </section>
   );
 };
-

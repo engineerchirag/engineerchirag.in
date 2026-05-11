@@ -36,7 +36,7 @@ export const CommandPalette = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <Sparkles className="w-4 h-4 text-indigo-400 animate-pulse" />
           <span className="text-gray-300 text-sm font-medium">Ask AI Anything</span>
-          <div className="flex items-center gap-1 bg-white/10 px-2 py-1 rounded text-xs text-gray-400 font-mono ml-2">
+          <div className="hidden sm:flex items-center gap-1 bg-white/10 px-2 py-1 rounded text-xs text-gray-400 font-mono ml-2">
             <Command className="w-3 h-3" />
             <span>K</span>
           </div>
@@ -64,7 +64,7 @@ export const CommandPalette = () => {
                 <Search className="w-5 h-5 text-gray-400" />
                 <input 
                   type="text" 
-                  placeholder="Ask about the mentorship, curriculum, or career growth..." 
+                  placeholder="Ask about mentorship or career growth..." 
                   className="flex-1 bg-transparent border-none outline-none text-white placeholder-gray-500 text-lg"
                   autoFocus
                 />

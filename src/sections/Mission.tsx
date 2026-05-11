@@ -51,7 +51,7 @@ export const Mission = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-3 gap-6 auto-rows-[250px]"
+          className="grid md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[250px]"
         >
           {/* Main Bento Box */}
           <motion.div variants={item} className="md:col-span-2 md:row-span-2 h-full">
@@ -97,4 +97,3 @@ export const Mission = () => {
     </section>
   );
 };
-

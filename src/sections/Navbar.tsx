@@ -46,7 +46,7 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noreferrer">
+          <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noopener noreferrer">
             <Button variant="primary" size="sm" className="hidden sm:inline-flex">
               Apply Now
             </Button>
@@ -56,4 +56,3 @@ export const Navbar = () => {
     </motion.nav>
   );
 };
-

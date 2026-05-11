@@ -35,7 +35,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-[1.05] mb-8 text-white"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-[1.05] mb-8 text-white"
             >
               Engineering <br />
               <span className="relative inline-block">
@@ -70,7 +70,7 @@ export const Hero = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="https://topmate.io/engineerchirag" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+              <a href="https://topmate.io/engineerchirag" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full group hover:border-indigo-500/50 hover:bg-indigo-500/10">
                   1:1 Personal Advice
                 </Button>
@@ -83,12 +83,12 @@ export const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block perspective-1000"
+            className="relative perspective-1000"
           >
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full aspect-square max-w-[500px] ml-auto"
+              className="relative w-full aspect-square max-w-[500px] mx-auto lg:ml-auto lg:mr-0"
             >
               {/* Glow behind the window */}
               <div className="absolute inset-0 bg-indigo-500/30 blur-[100px] rounded-full"></div>
@@ -131,7 +131,7 @@ export const Hero = () => {
       
       {/* Scrolling Marquee - Moved to bottom edge */}
       <div className="absolute bottom-0 left-0 right-0 w-full py-4 border-t border-white/5 bg-black/50 backdrop-blur-md overflow-x-hidden z-20">
-        <div className="flex gap-16 whitespace-nowrap text-white/20 font-display font-black text-2xl uppercase tracking-wider animate-marquee [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex gap-8 sm:gap-16 whitespace-nowrap text-white/20 font-display font-black text-xl sm:text-2xl uppercase tracking-wider animate-marquee [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <span>Frontend Architecture</span>
           <span>System Design</span>
           <span>Node.js</span>
@@ -151,4 +151,3 @@ export const Hero = () => {
     </section>
   );
 };
-

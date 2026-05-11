@@ -26,8 +26,8 @@ export const Program = () => {
             className="glass-card p-10 rounded-[2rem] relative border border-white/5 bg-[#0a0a0a] shadow-xl"
           >
             <h3 className="text-base font-bold text-gray-300 uppercase tracking-widest mb-4">1 Month Mentorship</h3>
-            <div className="flex items-baseline gap-1 mb-2 text-white">
-              <span className="text-5xl font-display font-bold">₹40,000</span>
+            <div className="flex items-baseline gap-1 mb-2 text-white flex-wrap">
+              <span className="text-4xl sm:text-5xl font-display font-bold">₹40,000</span>
             </div>
             <p className="text-white font-medium text-lg mt-4 mb-4">Interview Preparation</p>
             <p className="text-gray-300 text-base mb-10 leading-relaxed font-normal">
@@ -50,7 +50,7 @@ export const Program = () => {
               ))}
             </ul>
             
-            <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noreferrer" className="block w-full">
+            <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noopener noreferrer" className="block w-full">
               <Button variant="outline" size="lg" className="w-full">
                 Apply for 1 Month
               </Button>
@@ -78,8 +78,8 @@ export const Program = () => {
                 </span>
                 
                 <h3 className="text-base font-bold text-indigo-400 uppercase tracking-widest mb-4">3 Months Mentorship</h3>
-                <div className="flex items-baseline gap-1 mb-2 text-white">
-                  <span className="text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400 drop-shadow-sm">
+                <div className="flex items-baseline gap-1 mb-2 text-white flex-wrap">
+                  <span className="text-5xl sm:text-6xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-400 drop-shadow-sm">
                     ₹25,000
                   </span>
                   <span className="text-gray-400 text-base font-medium">/ month</span>
@@ -105,7 +105,7 @@ export const Program = () => {
                   ))}
                 </ul>
                 
-                <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noreferrer" className="block w-full">
+                <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noopener noreferrer" className="block w-full">
                   <Button variant="secondary" size="lg" className="w-full relative overflow-hidden group/btn font-bold">
                     <span className="relative z-10">Apply for 3 Months</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
@@ -122,4 +122,3 @@ export const Program = () => {
     </section>
   );
 };
-

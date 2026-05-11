@@ -56,15 +56,16 @@ export const FAQ = () => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full p-6 text-left flex justify-between items-center outline-none group"
+                  aria-expanded={isOpen}
+                  className="w-full p-6 text-left flex justify-between items-center outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-2xl group"
                 >
-                  <div className="flex items-center gap-4 pr-8">
+                  <div className="flex items-center gap-4 pr-4 sm:pr-8 flex-1">
                     <div className={`flex items-center justify-center w-8 h-8 rounded-full border transition-colors ${
                       isOpen ? 'border-indigo-500/30 bg-indigo-500/10' : 'border-white/10 bg-white/5 group-hover:bg-white/10'
-                    }`}>
+                    } flex-shrink-0`}>
                       <Sparkles className={`w-4 h-4 ${isOpen ? 'text-indigo-400' : 'text-gray-400'}`} />
                     </div>
-                    <span className={`font-medium text-lg transition-colors ${isOpen ? 'text-indigo-100' : 'text-gray-200'}`}>
+                    <span className={`font-medium text-left text-base sm:text-lg transition-colors ${isOpen ? 'text-indigo-100' : 'text-gray-200'}`}>
                       {faq.q}
                     </span>
                   </div>
@@ -97,4 +98,3 @@ export const FAQ = () => {
     </section>
   );
 };
-

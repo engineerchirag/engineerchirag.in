@@ -1,6 +1,6 @@
 import { Code2, Globe, Users, PenTool, Layout, Rocket } from 'lucide-react';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
-import { ScrambleText } from '@/components/ui/ScrambleText';
+import { motion } from 'framer-motion';
 
 const benefits = [
   { 
@@ -66,17 +66,30 @@ const benefits = [
 ];
 
 export const Benefits = () => {
+  const titleWords = "Why This Mentorship?".split(" ");
+
   return (
     <section className="py-32 relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
-            <ScrambleText text="Why This Mentorship?" />
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white flex justify-center flex-wrap">
+            {titleWords.map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
+                className="inline-block mr-3 last:mr-0"
+              >
+                {word}
+              </motion.span>
+            ))}
           </h2>
           <p className="text-gray-300 font-normal text-lg max-w-2xl mx-auto">Not just another course. A complete transformation of your engineering identity.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[220px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[220px]">
           {benefits.map((benefit, i) => (
             <SpotlightCard
               key={i}
@@ -99,4 +112,3 @@ export const Benefits = () => {
     </section>
   );
 };
-
