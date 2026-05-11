@@ -3,9 +3,17 @@ import { Button } from '@/components/ui/Button';
 
 export const Footer = () => {
   return (
-    <footer className="pt-24 pb-32 border-t border-white/10 bg-transparent relative z-10 overflow-hidden">
+    <footer className="pt-24 pb-32 border-t border-white/10 bg-[#030303] relative z-10 overflow-hidden">
+      {/* Footer Dotted Grid Background */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+        backgroundSize: '32px 32px',
+        maskImage: 'linear-gradient(to top, black, transparent)',
+        WebkitMaskImage: 'linear-gradient(to top, black, transparent)'
+      }}></div>
+      
       {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-t-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-t-full pointer-events-none z-0"></div>
       
       {/* Massive Typography Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-black text-white/[0.02] whitespace-nowrap pointer-events-none select-none font-display tracking-tighter">

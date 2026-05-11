@@ -19,14 +19,15 @@ export const GlobalBackground = () => {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-[#030303] pointer-events-none">
       
-      {/* 1. Deep animated Aurora (More vibrant) */}
+      {/* 1. Deep animated Aurora (GPU Optimized) */}
       <motion.div
         animate={{
           rotate: [0, 360],
           scale: [1, 1.2, 1],
         }}
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full mix-blend-screen filter blur-[140px] opacity-[0.25] bg-gradient-to-tr from-indigo-600 via-purple-600 to-transparent"
+        className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full mix-blend-screen opacity-[0.4] will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.5) 0%, rgba(147,51,234,0.2) 40%, transparent 70%)' }}
       />
       <motion.div
         animate={{
@@ -34,7 +35,8 @@ export const GlobalBackground = () => {
           scale: [1, 1.4, 1],
         }}
         transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[30%] -right-[10%] w-[80%] h-[80%] rounded-full mix-blend-screen filter blur-[140px] opacity-[0.2] bg-gradient-to-bl from-pink-600 via-fuchsia-600 to-transparent"
+        className="absolute top-[30%] -right-[10%] w-[80%] h-[80%] rounded-full mix-blend-screen opacity-[0.3] will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.4) 0%, rgba(162,28,175,0.2) 40%, transparent 70%)' }}
       />
       <motion.div
         animate={{
@@ -42,7 +44,8 @@ export const GlobalBackground = () => {
           y: [0, -100, 0],
         }}
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[-20%] left-[10%] w-[60%] h-[60%] rounded-full mix-blend-screen filter blur-[140px] opacity-[0.2] bg-gradient-to-t from-blue-600 via-cyan-600 to-transparent"
+        className="absolute bottom-[-20%] left-[10%] w-[60%] h-[60%] rounded-full mix-blend-screen opacity-[0.3] will-change-transform"
+        style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.4) 0%, rgba(6,182,212,0.2) 40%, transparent 70%)' }}
       />
       
       {/* 2. Floating Data Particles (Starlight effect) */}
@@ -56,7 +59,8 @@ export const GlobalBackground = () => {
               top: `${p.y}%`,
               width: p.size,
               height: p.size,
-              boxShadow: '0 0 10px 2px rgba(255,255,255,0.4)',
+              boxShadow: '0 0 10px 1px rgba(255,255,255,0.4)',
+              willChange: 'transform, opacity'
             }}
             animate={{
               y: [0, -100, 0],

@@ -21,7 +21,7 @@ export const Hero = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.05 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-10 shadow-[0_0_20px_rgba(99,102,241,0.15)]"
             >
               <span className="relative flex h-2 w-2 mr-1">
@@ -34,7 +34,7 @@ export const Hero = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-[1.05] mb-8 text-white"
             >
               Engineering <br />
@@ -51,7 +51,7 @@ export const Hero = () => {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
               className="text-gray-300 text-lg md:text-xl max-w-xl mb-12 leading-relaxed font-normal"
             >
               Master front-end architecture, system design, and career growth strategies. 
@@ -61,7 +61,7 @@ export const Hero = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
             >
               <a href="#program" className="w-full sm:w-auto">
@@ -82,7 +82,7 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="relative hidden lg:block perspective-1000"
           >
             <motion.div 

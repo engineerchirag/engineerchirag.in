@@ -30,19 +30,19 @@ export const GenerativeTerminal = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % snippets.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="p-6 bg-[#0a0a0a] rounded-b-xl border-t border-white/10 font-mono text-base h-[180px] overflow-hidden relative">
+    <div className="p-4 sm:p-6 bg-[#0a0a0a] rounded-b-xl border-t border-white/10 font-mono text-[10px] sm:text-xs md:text-sm lg:text-base h-[180px] overflow-hidden relative">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="flex flex-col gap-2"
         >
           {snippets[index].map((line, i) => (
@@ -50,7 +50,7 @@ export const GenerativeTerminal = () => {
               key={i}
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "100%", opacity: 1 }}
-              transition={{ delay: i * 0.8, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: i * 0.2, duration: 0.3, ease: "easeOut" }}
               className="flex gap-4 whitespace-nowrap overflow-hidden items-center"
             >
               <span className="text-indigo-500/50 select-none w-4 text-right">{i + 1}</span>
@@ -60,7 +60,7 @@ export const GenerativeTerminal = () => {
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: [0, 1, 0] }} 
-            transition={{ delay: snippets[index].length * 0.8, repeat: Infinity, duration: 1 }}
+            transition={{ delay: snippets[index].length * 0.2, repeat: Infinity, duration: 0.8 }}
             className="w-2 h-4 bg-white/50 ml-8 mt-1"
           />
         </motion.div>
