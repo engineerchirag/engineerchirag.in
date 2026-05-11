@@ -45,7 +45,7 @@ export const Testimonials = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <SpotlightCard className="p-10 h-full flex flex-col group" spotlightColor="rgba(255, 255, 255, 0.05)">
+              <SpotlightCard className="p-6 sm:p-10 h-full flex flex-col group overflow-hidden" spotlightColor="rgba(255, 255, 255, 0.05)">
                 <Quote className="absolute top-8 right-8 w-12 h-12 text-white/5 group-hover:text-white/10 transition-colors" />
                 
                 <div className="flex gap-1 mb-8">
@@ -70,7 +70,7 @@ export const Testimonials = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-base">{review.name}</h4>
-                    <p className="text-[11px] text-indigo-400 uppercase tracking-wider mt-1 font-semibold">{review.role}</p>
+                    <p className="text-xs text-indigo-400 font-semibold mt-1 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">{review.role}</p>
                   </div>
                 </div>
               </SpotlightCard>
@@ -81,4 +81,3 @@ export const Testimonials = () => {
     </section>
   );
 };
-

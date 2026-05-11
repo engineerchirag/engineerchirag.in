@@ -17,7 +17,7 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center w-full">
           
           {/* Left Text Content */}
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
-              June 2026 Cohort
+              June 2026 Cohort • <span className="text-red-400">Limited Seats</span>
             </motion.div>
 
             <motion.h1 
@@ -52,7 +52,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.15 }}
-              className="text-gray-300 text-lg md:text-xl max-w-xl mb-12 leading-relaxed font-normal"
+              className="text-gray-300 text-lg md:text-xl max-w-xl mb-12 leading-relaxed font-normal mx-auto lg:mx-0"
             >
               Master front-end architecture, system design, and career growth strategies. 
               Learn the true "engineering mindset" directly from an Engineering Manager at Google.
@@ -62,7 +62,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
-              className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 w-full sm:w-auto"
             >
               <a href="#program" className="w-full sm:w-auto">
                 <Button variant="primary" size="lg" className="w-full group">

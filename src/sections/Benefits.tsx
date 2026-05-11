@@ -93,7 +93,7 @@ export const Benefits = () => {
           {benefits.map((benefit, i) => (
             <SpotlightCard
               key={i}
-              className={`p-8 flex flex-col group ${benefit.className}`}
+              className={`p-6 sm:p-8 flex flex-col group overflow-hidden ${benefit.className}`}
               spotlightColor={benefit.spotlightColor}
             >
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-500 group-hover:scale-110 ${benefit.bgClass} ${benefit.glowClass}`}>

@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = ['Mission', 'Program', 'Reviews', 'FAQs'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +34,11 @@ export const Navbar = () => {
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center font-bold text-lg shadow-[0_0_15px_rgba(99,102,241,0.5)]">
               CG
             </div>
-            <span className="font-display font-bold text-xl tracking-tight hidden sm:block">Engineer Chirag</span>
+            <span className="font-display font-bold text-lg sm:text-xl tracking-tight">Engineer Chirag</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-base font-medium text-gray-300">
-            {['Mission', 'Program', 'Reviews', 'FAQs'].map((item) => (
+            {navLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -46,12 +50,43 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" size="sm" className="hidden sm:inline-flex">
-              Apply Now
-            </Button>
-          </a>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a href="https://forms.gle/2Roiigp7dgDt1U157" target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" size="sm">
+                Apply<span className="hidden sm:inline"> Now</span>
+              </Button>
+            </a>
+            <button 
+              className="md:hidden text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-6 right-6 mt-4 p-6 rounded-3xl bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 shadow-2xl flex flex-col gap-6 md:hidden"
+            >
+              {navLinks.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-gray-300 hover:text-white transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

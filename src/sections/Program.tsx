@@ -23,7 +23,7 @@ export const Program = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-10 rounded-[2rem] relative border border-white/5 bg-[#0a0a0a] shadow-xl"
+          className="glass-card p-6 sm:p-10 rounded-[2rem] relative border border-white/5 bg-[#0a0a0a] shadow-xl"
           >
             <h3 className="text-base font-bold text-gray-300 uppercase tracking-widest mb-4">1 Month Mentorship</h3>
             <div className="flex items-baseline gap-1 mb-2 text-white flex-wrap">
@@ -67,7 +67,7 @@ export const Program = () => {
             {/* Animated Gradient Border (Spinning conic gradient) */}
             <div className="absolute inset-[-100%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-100" />
             
-            <div className="relative h-full w-full rounded-[calc(2rem-2px)] bg-[#050505] p-10 overflow-hidden">
+            <div className="relative h-full w-full rounded-[calc(2rem-2px)] bg-[#050505] p-6 sm:p-10 overflow-hidden">
               {/* Inner Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-purple-500/10 opacity-50" />
               <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 blur-[100px] rounded-full" />

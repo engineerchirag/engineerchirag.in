@@ -55,7 +55,7 @@ export const Mission = () => {
         >
           {/* Main Bento Box */}
           <motion.div variants={item} className="md:col-span-2 md:row-span-2 h-full">
-            <SpotlightCard className="p-10 h-full flex flex-col group" spotlightColor="rgba(239, 68, 68, 0.15)">
+          <SpotlightCard className="p-6 sm:p-10 h-full flex flex-col group overflow-hidden" spotlightColor="rgba(239, 68, 68, 0.15)">
               <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 group-hover:bg-red-500/20 transition-colors">
                 <Heart className="w-7 h-7 text-red-400" />
               </div>
@@ -70,7 +70,7 @@ export const Mission = () => {
           </motion.div>
 
           <motion.div variants={item} className="h-full">
-            <SpotlightCard className="p-8 h-full flex flex-col group" spotlightColor="rgba(59, 130, 246, 0.15)">
+          <SpotlightCard className="p-6 sm:p-8 h-full flex flex-col group overflow-hidden" spotlightColor="rgba(59, 130, 246, 0.15)">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
                 <Globe2 className="w-6 h-6 text-blue-400" />
               </div>
@@ -82,7 +82,7 @@ export const Mission = () => {
           </motion.div>
 
           <motion.div variants={item} className="h-full">
-            <SpotlightCard className="p-8 h-full flex flex-col group" spotlightColor="rgba(234, 179, 8, 0.15)">
+          <SpotlightCard className="p-6 sm:p-8 h-full flex flex-col group overflow-hidden" spotlightColor="rgba(234, 179, 8, 0.15)">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
                 <Lightbulb className="w-6 h-6 text-yellow-400" />
               </div>

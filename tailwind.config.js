@@ -33,8 +33,8 @@ export default {
           '100%': { opacity: 1, transform: 'translate(-50%,-40%) scale(1)' },
         },
         marquee: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-1000px)' },
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(-50%)' },
         }
       }
     },

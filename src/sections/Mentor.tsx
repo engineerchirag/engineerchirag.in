@@ -11,7 +11,7 @@ export const Mentor = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative group"
+        className="relative group mx-auto max-w-md lg:max-w-none w-full"
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative glass-card p-2">

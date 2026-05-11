@@ -74,7 +74,7 @@ export const Enrollment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card p-8 rounded-3xl text-center group relative"
+                className="glass-card p-6 sm:p-8 rounded-3xl text-center group relative overflow-hidden"
               >
                 <div className="absolute top-4 right-4 text-white/5 font-display font-black text-6xl leading-none transition-transform group-hover:scale-110">
                   {i + 1}
@@ -117,7 +117,7 @@ export const Enrollment = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <SpotlightCard className="p-10 group h-full" spotlightColor="rgba(99, 102, 241, 0.15)">
+              <SpotlightCard className="p-6 sm:p-10 group h-full overflow-hidden" spotlightColor="rgba(99, 102, 241, 0.15)">
                 <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-8 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-all duration-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]">
                   <Calendar className="w-8 h-8 text-indigo-400" />
                 </div>
@@ -144,7 +144,7 @@ export const Enrollment = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <SpotlightCard className="p-10 group h-full" spotlightColor="rgba(168, 85, 247, 0.15)">
+              <SpotlightCard className="p-6 sm:p-10 group h-full overflow-hidden" spotlightColor="rgba(168, 85, 247, 0.15)">
                 <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-8 border border-purple-500/20 group-hover:bg-purple-500/20 transition-all duration-500 shadow-lg group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                   <MessageCircle className="w-8 h-8 text-purple-400" />
                 </div>
