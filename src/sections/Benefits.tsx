@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Code2, Globe, Users, PenTool, Layout, Rocket } from 'lucide-react';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { ScrambleText } from '@/components/ui/ScrambleText';

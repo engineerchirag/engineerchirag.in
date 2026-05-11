@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Sparkles, Code2, Users, Rocket } from 'lucide-react';
+import { ArrowRight, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { GenerativeTerminal } from '@/components/ui/GenerativeTerminal';
 
